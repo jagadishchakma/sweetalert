@@ -1,0 +1,28 @@
+How to use sweetlaert button on your actions?
+    Step-01: Google search - "sweet alert cdn link"
+    Step-02: Copy link- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    Step-03: Paste link into your header file.
+    Step-04: Copy and paste below code into your footer js or layout root file along:
+            <script>
+            $(document).on('click', '#delete', function(e){
+              e.preventDefault();
+              var link = $(this).attr('href');
+              swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                 window.location.href = link;
+                } else {
+                  swal("Safe Data!");
+                }
+              });
+
+            })
+          </script>
+  Step-05: Actions button write id="delete".
+  Step-06: Done and enjoy.
